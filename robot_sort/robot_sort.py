@@ -97,7 +97,6 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        # bubble sort
         self.set_light_on()
         #This leaves index 0 as none
         self.swap_item()
