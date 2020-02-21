@@ -99,12 +99,12 @@ class SortingRobot:
         # Fill this out
         # bubble sort
         self.set_light_on()
+        #This leaves index 0 as none
         self.swap_item()
         while self.light_is_on():
             self.set_light_off()
             self.move_right()
             while self.can_move_right():
-
                 self.swap_item()
                 self.move_right()
                 if self.compare_item() == 1:
@@ -120,6 +120,7 @@ class SortingRobot:
 
         while self.can_move_left():
             self.move_left()
+        # sets the final item to index 0
         self.swap_item()
 
 
