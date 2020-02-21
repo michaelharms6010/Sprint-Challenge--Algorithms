@@ -100,22 +100,26 @@ class SortingRobot:
         self.set_light_on()
         #This leaves index 0 as none
         self.swap_item()
+
         while self.light_is_on():
             self.set_light_off()
             self.move_right()
+
             while self.can_move_right():
-                self.swap_item()
-                self.move_right()
-                if self.compare_item() == 1:
-                    self.swap_item()
-            while self.can_move_left():
-                if self.can_move_right() == False:
-                    self.swap_item()         
-                self.swap_item()
-                self.move_left()
                 if self.compare_item() == -1:
+                    self.swap_item()
+                self.move_right()
+
+            while self.can_move_left():
+                if self.can_move_right() == False and self.compare_item() == -1:
+                     self.swap_item()         
+                self.swap_item()
+
+                if self.compare_item() == 1:
                     self.swap_item() 
                     self.set_light_on() 
+
+                self.move_left()
 
         while self.can_move_left():
             self.move_left()
